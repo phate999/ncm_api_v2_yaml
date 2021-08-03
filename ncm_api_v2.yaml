@@ -1,0 +1,3866 @@
+---
+basePath: https://www.cradlepointecm.com/api/v2
+swaggerVersion: '1.2'
+apiVersion: v2
+apis:
+- path: "/accounts/"
+  operations:
+  - method: GET
+    summary: Get Accounts information
+    notes: "<p>This method gives a list of accounts with its information.</p><!--<p>
+      ECM also provides 'filter' parameter. Results can be filtered by field values.
+      Example:</p><pre>format=json&mac=10</pre><p>Fields from sub-resources can be
+      specified. Example:</p><pre>format=json&product.name=MBR1400</pre><p>Multiple
+      values can be matched:</p><pre>mac__in=003044123456,003044789012</pre>--><p>Example
+      URL</p><pre> https://www.cradlepointecm.com/api/v2/accounts/?id=1127&name=cradlepoint</pre>"
+    type: ''
+    nickname: accounts
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: account
+      description: Parent account
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: account__in
+      description: Contains filter for account
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: id
+      description: Object ID
+      required: false
+      type: int
+      paramType: query
+    - name: id__in
+      description: Contains filter for id
+      required: false
+      type: int
+      paramType: query
+    - name: name
+      description: Name of the account
+      required: false
+      type: string
+      paramType: query
+    - name: name__in
+      description: Contains filter for name
+      required: false
+      type: string
+      paramType: query
+    - name: expand
+      description: Specifies expanded data for a attribute
+      required: false
+      type: string
+      paramType: query
+- path: "/accounts/{id}/"
+  operations:
+  - method: PUT
+    summary: Update an account
+    notes: "<p>This method updates an account for associated id</p>"
+    description: "<p>This operation updates an account.</p>"
+    group: account
+    type: ''
+    nickname: accounts
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: Object ID
+      required: true
+      type: int
+      paramType: path
+    - name: content
+      description: Add  the Json
+      required: true
+      type: string
+      paramType: body
+- path: "/accounts/"
+  operations:
+  - method: POST
+    summary: Create new sub-account
+    notes: This operation creates new sub-account
+    description: "<p>This operation creates new sub-account.</p>"
+    group: account
+    type: ''
+    nickname: accounts
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: content
+      description: Add  the Json
+      required: true
+      type: string
+      paramType: body
+- path: "/accounts/{id}/"
+  operations:
+  - method: DELETE
+    summary: Delete an account
+    notes: This method deletes an account with the associated id. <p><b>Note:</b>
+      The 'Try it out' button is removed for this example since the delete process
+      is not reversible. Once a delete occurs the data is gone forever.</p>
+    description: "<p>This operation deletes an account.</p>"
+    group: account
+    type: ''
+    nickname: accounts
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: Object ID
+      required: true
+      type: int
+      paramType: path
+- path: "/alert_push_destinations/"
+  operations:
+  - method: GET
+    summary: Get information about alert_push_destinations
+    notes: "<p>This method retrieves information about your Alert Push Destinations.</p>"
+    type: ''
+    nickname: alert_push_destinations
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: destination_config_id
+      description: Unique ID of an Alert Push Destination
+      required: false
+      type: timeuuid
+      paramType: query
+- path: "/alert_push_destinations/"
+  operations:
+  - method: POST
+    summary: Create an alert_push_destinations record
+    notes: This operation creates new Alert Push Destination
+    description: "<p>This operation creates a new Alert Push Destination.</p>"
+    group: alert_push_destinations
+    type: ''
+    nickname: alert_push_destinations
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: content
+      description: Json object containing any of the following fields; name, enabled,
+        endpoint, and authentication.
+      required: true
+      type: string
+      paramType: body
+- path: "/alert_push_destinations/{destination_config_id}/"
+  operations:
+  - method: PATCH
+    summary: Update an alert_push_destinations record
+    notes: "<p>Use this method to update an Alert Push Destination matching the passed
+      in destination_config_id</p>"
+    description: "<p>This operation updates an Alert Push Destination.</p>"
+    group: alert_push_destinations
+    type: ''
+    nickname: alert_push_destinations
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: destination_config_id
+      description: Unique ID of an Alert Push Destination
+      required: true
+      type: timeuuid
+      paramType: path
+    - name: content
+      description: Json object containing the fields/values to update
+      required: true
+      type: string
+      paramType: body
+- path: "/alert_push_destinations/{destination_config_id}/"
+  operations:
+  - method: DELETE
+    summary: Delete an alert_push_destinations record
+    notes: This method deletes an Alert Push Destination with the associated id. <p><b>Note:</b>
+      The 'Try it out' button is removed for this example since the delete process
+      is not reversible. Once a delete occurs the data is gone forever.</p>
+    description: "<p>This operation deletes an account.</p>"
+    group: alert_push_destinations
+    type: ''
+    nickname: alert_push_destinations
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: destination_config_id
+      description: Object ID of Alert Push Destination to delete
+      required: true
+      type: timeuuid
+      paramType: path
+- path: "/activity_logs/"
+  operations:
+  - method: GET
+    summary: Get Activity Log information
+    notes: "<p>This method returns NCM activity log information.</p><p>Example URL</p><pre>
+      https://www.cradlepointecm.com/api/v2/activity_logs/</pre>"
+    type: ''
+    nickname: activities
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: action_timestamp__exact
+      description: The time (exact) when the action occurred
+      required: false
+      type: timestamp
+      paramType: query
+    - name: action_timestamp__lt
+      description: Less than filtering operator for when action occurred
+      required: false
+      type: timestamp
+      paramType: query
+    - name: action_timestamp__lte
+      description: Less than or equal filtering operator for when action occurred
+      required: false
+      type: timestamp
+      paramType: query
+    - name: action_timestamp__gt
+      description: Greater than filtering operator for when action occurred
+      required: false
+      type: timestamp
+      paramType: query
+    - name: action_timestamp__gte
+      description: Greater than or equal filtering operator for when action occurred
+      required: false
+      type: timestamp
+      paramType: query
+    - name: actor__type
+      description: Type of actor who took the action
+      required: false
+      type: string
+      enum:
+      - system
+      - legacy user
+      - api key
+      - router
+      - sso user
+      - login
+      - access point
+      paramType: query
+    - name: action__type
+      description: Type of action taken
+      required: false
+      type: string
+      enum:
+      - create
+      - delete
+      - update
+      - request
+      - report
+      - login
+      - logout
+      - register
+      - unregister
+      - activate
+      paramType: query
+    - name: object__type
+      description: Type of object the action was taken upon
+      required: false
+      type: string
+      enum:
+      - rome account
+      - legacy user
+      - group
+      - router
+      - schedule
+      - sso user
+      - sso account
+      - task
+      - api key
+      - net device
+      - notifier
+      - feature binding
+      - rome authorization
+      - sso authorizaion
+      - remote connection
+      - remote connection profile
+      - remote lan management
+      - access point
+      - network
+      paramType: query
+- path: "/alert_rules/"
+  operations:
+  - method: GET
+    summary: Get information about alert_rules
+    notes: Use the GET method on this endpoint to retrieve alert_rules records. Use
+      the available filtering fields to narrow or broaden your search.
+    type: ''
+    nickname: alert_rules
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: alert_config_id
+      description: Unique ID of an Alert Rule
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: account
+      description: Parent account
+      required: false
+      type: url
+      paramType: query
+    - name: schedule
+      description: Schedule for sending notifications
+      required: false
+      type: string
+      paramType: query
+    - name: associated_accounts
+      description: A list of account-identfier ints
+      required: false
+      type: int
+      paramType: query
+    - name: associated_groups
+      description: A list of group-identfier ints
+      required: false
+      type: int
+      paramType: query
+    - name: filter_criteria
+      description: Alert types to add to the Alert Rule
+      required: false
+      type: json
+      paramType: query
+    - name: email_destinations
+      description: Email dests (list of ints) used for email notifications
+      required: false
+      type: int
+      paramType: query
+    - name: http_destinations
+      description: HTTP dests (list of timeuuids) for push notifications
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: updated_at
+      description: Last time an Alert Rule was modified
+      required: false
+      type: timestamp
+      paramType: query
+    - name: settings
+      description: Additional settings for PDP service-overage alerts
+      required: false
+      type: json
+      paramType: query
+- path: "/alert_rules/"
+  operations:
+  - method: POST
+    summary: Create an alert_rules record
+    notes: Use the POST method on this endpoint to create a new alert_rules record.
+      Include the fields/values to add for the record in the 'Content' field as a
+      JSON object.
+    description: Use the POST method on this endpoint to create a new alert_rules
+      record. Include the fields/values to add for the record in the 'Content' field
+      as a JSON object.
+    group: alert_rules
+    type: ''
+    nickname: alert_rules
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: content
+      description: Json object containing any of the following fields; schedule, associated_accounts,
+        associated_groups, filter_criteria, http_destinations, and settings.
+      required: true
+      type: string
+      paramType: body
+- path: "/alert_rules/{alert_config_id}/"
+  operations:
+  - method: PATCH
+    summary: Update an alert_rules record
+    notes: Use the PATCH method on this endpoint to update an alert_rules record.
+      Include the fields/values to update in the 'Content' field as a JSON object.
+    description: "<p>This operation updates an Alert Rule.</p>"
+    group: alert_rules
+    type: ''
+    nickname: alert_rules
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: alert_config_id
+      description: Unique ID of an Alert Rule
+      required: false
+      type: timeuuid
+      paramType: path
+    - name: content
+      description: Json object containing the fields/values to update. This can contain
+        any of the fields allowed in POST operations
+      required: true
+      type: string
+      paramType: body
+- path: "/alert_rules/{alert_config_id}/"
+  operations:
+  - method: DELETE
+    summary: Delete an alert_rules record
+    notes: Use the DELETE method on this endpoint to delete a alert_rules record.
+      This method requires the ID of the alert_rules record to delete. Performing
+      a DELETE action removes the record from NetCloud and can't be reversed.
+    description: "<p>This operation deletes an account.</p>"
+    group: alert_rules
+    type: ''
+    nickname: alert_rules
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: alert_config_id
+      description: Object ID of Alert Rule to delete
+      required: true
+      type: timeuuid
+      paramType: path
+- path: "/alerts/"
+  operations:
+  - method: GET
+    summary: Get information about alerts
+    notes: Use the GET method on this endpoint to retrieve alerts records. Use the
+      available filtering fields to narrow or broaden your search.
+    description: "<p>This method gives alert information with associated id.</p>"
+    group: alerts
+    type: ''
+    nickname: alerts
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: account
+      description: Account this alert is related to, or null if the router field has
+        a value
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: created_at
+      description: Time the alert record was created in NCM
+      required: false
+      type: timestamp
+      paramType: query
+    - name: created_at_timeuuid
+      description: A unique ID associated with the created_at timestamp. Ordering
+        by the ID is equivalent to time ordering. This field can identify a specific
+        record or be used for paging.
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: detected_at
+      description: Time the alert was detected
+      required: false
+      type: timestamp
+      paramType: query
+    - name: friendly_info
+      description: Human-readable description of the alert
+      required: false
+      type: string
+      paramType: query
+    - name: info
+      description: Alert-type specific information, in JSON format
+      required: false
+      type: string
+      paramType: body
+    - name: router
+      description: Device this alert is related to, or null if the account field has
+        a value
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: type
+      description: Specifies the type of the alert
+      required: false
+      type: string
+      paramType: query
+- path: "/batteries/"
+  operations:
+  - method: GET
+    summary: Get information about batteries
+    notes: Use the GET method on this endpoint to retrieve batteries records.
+    type: ''
+    nickname: batteries
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: router
+      description: ID of E100-series router to query for battery information
+      required: true
+      type: int
+      paramType: query
+- path: "/configuration_managers/"
+  operations:
+  - method: GET
+    summary: Get information about configuration_managers
+    notes: Use the GET method on this endpoint to retrieve configuration_managers
+      records. Use the available filtering fields to narrow or broaden your search.
+    nickname: configuration_managers
+    group: configuration_managers
+    type: ''
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: account
+      description: Account that contains the configuration_managers record
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: account__in
+      description: Filter for account contains - a comma-separated list of account
+        IDs
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: id
+      description: ID of a configuration_managers record
+      required: false
+      type: int
+      paramType: query
+    - name: id__in
+      description: Filter for ID contains - a comma-separated list of configuration_managers
+        record IDs
+      required: false
+      type: int
+      paramType: query
+    - name: router
+      description: Router ID
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: router__in
+      description: Filter for router ID contains - a comma-separated list of router-record
+        IDs
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: synched
+      description: True if device configuration is synced
+      required: false
+      type: boolean
+      paramType: query
+    - name: suspended
+      description: True if device configuration sync is paused
+      required: false
+      type: boolean
+      paramType: query
+    - name: expand
+      description: Specifies that the returned value for the passed in attribute be
+        expanded in the response body
+      required: false
+      type: string
+      enum:
+      - account
+      - router
+      paramType: query
+- path: "/configuration_managers/{id}/"
+  operations:
+  - method: PUT
+    summary: Update a configuration_managers record
+    notes: Use the PUT method on this endpoint to update a configuration_managers
+      record. Include the fields/values to update in the 'Content' field as a JSON
+      object.
+    description: Update a configuration_managers record, by ID
+    group: configuration_managers
+    type: ''
+    nickname: configuration_managers
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: The ID of the configuration_managers record to modify
+      required: true
+      type: int
+      paramType: path
+    - name: content
+      description: JSON describing the configuration_managers record field(s) to update
+      required: true
+      type: string
+      paramType: body
+- path: "/configuration_managers/{id}/"
+  operations:
+  - method: PATCH
+    summary: Update a configuration_managers record
+    notes: Use the PATCH method on this endpoint to update a configuration_managers
+      record. Include the fields/values to update in the 'Content' field as a JSON
+      object.
+    description: "<p>This method updates a configuration_managers for associated id.</p>"
+    group: configuration_managers
+    type: ''
+    nickname: configuration_managers
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: The ID of the configuration_managers record to modify
+      required: true
+      type: int
+      paramType: path
+    - name: content
+      description: JSON describing the configuration_managers record field(s) to update
+      required: true
+      type: string
+      paramType: body
+- path: "/device_app_bindings/"
+  operations:
+  - method: GET
+    summary: Get information about device_app_bindings
+    notes: Use the GET method on this endpoint to retrieve device_app_bindings records.
+      Use the available filtering fields to narrow or broaden your search.
+    description: Use the GET method on this endpoint to retrieve device_app_bindings
+      records. Use the available filtering fields to narrow or broaden your search.
+    group: device_app_bindings
+    type: ''
+    nickname: device_app_bindings
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: account
+      description: Account that owns the object
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: account__in
+      description: Filter for account contains - a comma-separated list of account
+        IDs
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: group
+      description: Group that owns the object
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: group__in
+      description: Filter for group contains - a comma-separated list of group IDs
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: app_version
+      description: Device app version
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: app_version__in
+      description: Filter for app_version contains - a comma-separated list of app
+        version IDs
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: id
+      description: ID of the device_app_bindings record
+      required: false
+      type: int
+      paramType: query
+    - name: id__in
+      description: Filter for ID contains - a comma-separated list of account IDs
+      required: false
+      type: int
+      paramType: query
+    - name: state
+      description: Object state
+      required: false
+      type: string
+      paramType: query
+    - name: state__in
+      description: Filter for states contains - a comma-separated list of states
+      required: false
+      type: string
+      paramType: query
+    - name: expand
+      description: Specifies that the returned value for the passed in attribute be
+        expanded in the response body
+      required: false
+      type: string
+      paramType: query
+- path: "/device_app_bindings/"
+  operations:
+  - method: POST
+    summary: Create a device_app_bindings record
+    notes: Use the POST method on this endpoint to create a new device_app_bindings
+      record. Include the fields/values to add for the record in the 'Content' field
+      as a JSON object. The JSON object to POST must contain the account, group, and
+      app_version fields. These fields must be posted in their URL form and not passed
+      in by their ID values.
+    description: Use the POST method on this endpoint to create a new device_app_bindings
+      record. Include the fields/values to add for the record in the 'Content' field
+      as a JSON object.
+    group: device_app_bindings
+    type: ''
+    nickname: device_app_bindings
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: content
+      description: JSON describing the device_app_bindings object to create
+      required: true
+      type: string
+      paramType: body
+- path: "/device_app_bindings/{id}/"
+  operations:
+  - method: DELETE
+    summary: Delete an device_app_bindings record
+    notes: Use the DELETE method on this endpoint to delete a device_app_bindings
+      record. This method requires the ID of the device_app_bindings record to delete.
+      Performing a DELETE action removes the record from NetCloud and can't be reversed.
+    description: "<p>This method deletes the device app binding with associated id</p>"
+    nickname: device_app_bindings
+    group: device_app_bindings
+    type: ''
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: ID of the device_app_binding record to delete
+      required: true
+      type: int
+      paramType: path
+- path: "/device_app_states/"
+  operations:
+  - method: GET
+    summary: Get information about device_app_states
+    notes: Use the GET method on this endpoint to retrieve device_app_states records.
+      Use the available filtering fields to narrow or broaden your search.
+    description: Use the GET method on this endpoint to retrieve device_app_states
+      records. Use the available filtering fields to narrow or broaden your search.
+    group: device_app_states
+    type: ''
+    nickname: device_app_states
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: account
+      description: Account that owns the device_app_states object
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: account__in
+      description: Filter for account contains - a comma-separated list of account
+        record IDs
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: router
+      description: Router where the Device App is installed
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: router__in
+      description: Filter for router ID contains - a comma-separated list of router
+        record IDs
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: app_version
+      description: The version ID of the associated device_app_versions
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: app_version__in
+      description: Filter for app_version contains - a comma-separated list of associated
+        device_app_versions version IDs
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: id
+      description: device_app_states record object ID
+      required: false
+      type: int
+      paramType: query
+    - name: id__in
+      description: Filter for device_app_states ID contains - a comma-separated list
+        of device_app_states record IDs
+      required: false
+      type: int
+      paramType: query
+    - name: state
+      description: device_app_states object state
+      required: false
+      type: string
+      paramType: query
+    - name: state__in
+      description: Filter for device_app_states state contains - a comma-separated
+        list of state record states
+      required: false
+      type: string
+      paramType: query
+    - name: expand
+      description: Specifies that the returned value for the passed in attribute be
+        expanded in the response body
+      required: false
+      type: string
+      enum:
+      - account
+      paramType: query
+- path: "/device_app_versions/"
+  operations:
+  - method: GET
+    summary: Get information about device_app_versions
+    notes: Use the GET method on this endpoint to retrieve device_app_versions records.
+      Use the available filtering fields to narrow or broaden your search.
+    description: Use the GET method on this endpoint to retrieve device_app_versions
+      records. Use the available filtering fields to narrow or broaden your search.
+    group: device_app_versions
+    type: ''
+    nickname: device_app_versions
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: account
+      description: Account that owns the Device App Versions object
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: account__in
+      description: Filter for account ID contains - a comma-separated list of account
+        record IDs
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: app
+      description: Associated device_apps object
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: app__in
+      description: Filter for app contains - a comma-separated list of device_apps
+        record IDs
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: id
+      description: ID of a device_app_versions record
+      required: false
+      type: int
+      paramType: query
+    - name: id__in
+      description: Filter for device_app_versions ID contains - a comma-separated
+        list of Device App Versions record IDs
+      required: false
+      type: int
+      paramType: query
+    - name: state
+      description: State of a device_app_versions object (Ready, Started, Stopped)
+      required: false
+      type: string
+      enum:
+      - Ready
+      - Started
+      paramType: query
+    - name: state__in
+      description: Filter for state contains - a comma-separated list of states (see
+        the state field above for state values)
+      required: false
+      type: string
+      paramType: query
+    - name: expand
+      description: Specifies that the returned value for the passed in attribute be
+        expanded in the response body.
+      required: false
+      type: string
+      enum:
+      - account
+      paramType: query
+- path: "/device_app_versions/{id}/"
+  operations:
+  - method: DELETE
+    summary: Delete a device_app_versions record
+    notes: Use the DELETE method on this endpoint to delete a device_app_versions
+      record. This method requires the ID of the device_app_versions record to delete.
+      Performing a DELETE action removes the record from NetCloud and can't be reversed.
+    description: Use the DELETE method on this endpoint to delete a device_app_versions
+      record. This method requires the ID of the device_app_versions record to delete.
+      Performing a DELETE action removes the record from NetCloud and can't be reversed.
+    nickname: device_app_versions
+    group: device_app_versions
+    type: ''
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: ID of the device_app_versions object to delete
+      required: true
+      type: int
+      paramType: path
+- path: "/device_apps/"
+  operations:
+  - method: GET
+    summary: Get information about device_apps
+    notes: Use the GET method on this endpoint to retrieve device_apps records. Use
+      the available filtering fields to narrow or broaden your search.
+    description: Use the GET method on this endpoint to retrieve device_apps records.
+      Use the available filtering fields to narrow or broaden your search.
+    group: device_apps
+    type: ''
+    nickname: device_apps
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: account
+      description: Account that owns the device_apps object
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: account__in
+      description: Filter for account contains - a comma-separated list of account
+        record IDs
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: name
+      description: Name of the device app
+      required: false
+      type: string
+      paramType: query
+    - name: name__in
+      description: Filter for name contains - a comma-separated list of device app
+        names
+      required: false
+      type: string
+      paramType: query
+    - name: id
+      description: device_apps record object ID
+      required: false
+      type: int
+      paramType: query
+    - name: id__in
+      description: Filter for device_apps ID contains - a comma-separated list of
+        device_apps record IDs
+      required: false
+      type: int
+      paramType: query
+    - name: uuid
+      description: Object UUID
+      required: false
+      type: int
+      paramType: query
+    - name: uuid__in
+      description: Filter for uuid contains - a comma-separated list of uuids
+      required: false
+      type: int
+      paramType: query
+    - name: expand
+      description: Specifies that the returned value for the passed in attribute be
+        expanded in the response body.
+      required: false
+      type: string
+      enum:
+      - account
+      paramType: query
+- path: "/device_apps/{id}/"
+  operations:
+  - method: DELETE
+    summary: Delete a device_apps record
+    notes: Use the DELETE method on this endpoint to delete a device_apps record.
+      This method requires the ID of the device_apps record to delete. Performing
+      a DELETE action removes the record from NetCloud and can't be reversed.
+    description: Use the DELETE method on this endpoint to delete a device_apps record.
+      This method requires the ID of the device_apps record to delete. Performing
+      a DELETE action removes the record from NetCloud and can't be reversed.
+    nickname: device_apps
+    group: device_apps
+    type: ''
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: ID of the device_apps record to delete
+      required: true
+      type: int
+      paramType: path
+- path: "/failovers/"
+  operations:
+  - method: GET
+    summary: Get information about failovers
+    notes: Use the GET method on this endpoint to retrieve failovers records. Use
+      the available filtering fields to narrow or broaden your search.
+    description: Use the GET method on this endpoint to retrieve failovers records.
+      Use the available filtering fields to narrow or broaden your search.
+    group: failovers
+    type: ''
+    nickname: failovers
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: account_id
+      description: The ID of an account to view failover events
+      required: false
+      type: int
+      paramType: query
+    - name: group_id
+      description: The ID of a group to view failover events
+      required: false
+      type: int
+      paramType: query
+    - name: router_id
+      description: The ID of a router to view failover events
+      required: false
+      type: int
+      paramType: query
+    - name: started_at
+      description: Started-at datetime filter for failover event
+      required: false
+      type: datetime
+      paramType: query
+    - name: ended_at
+      description: Ended-at datetime filter for failover event
+      required: false
+      type: datetime
+      paramType: query
+    - name: limit
+      description: Restricts the number of failovers records returned to this value
+      required: false
+      type: int
+      paramType: query
+    - name: offset
+      description: Specifies where (the index of) in a failovers recordset to begin
+        returning failovers records
+      required: false
+      type: int
+      paramType: query
+- path: "/firmwares/"
+  operations:
+  - method: GET
+    summary: Get information about firmwares
+    notes: Use the GET method on this endpoint to retrieve firmwares records. Use
+      the available filtering fields to narrow or broaden your search.
+    description: "<p>This operation gets Firmwares List.</p>"
+    group: firmwares
+    type: ''
+    nickname: firmwares
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: The ID of a firmwares record
+      required: false
+      type: int
+      paramType: query
+    - name: id__in
+      description: Filter for ID contains - a comma-separated list of firmwares record
+        IDs
+      required: false
+      type: int
+      paramType: query
+    - name: version
+      description: Version of this firmware
+      required: false
+      type: string
+      paramType: query
+    - name: version__in
+      description: Filter for version contains - a comma-separated list of versions
+      required: false
+      type: string
+      paramType: query
+- path: "/forwarding_lan_details/"
+  operations:
+  - method: GET
+    summary: Get information about forwarding_lan_details
+    notes: Use the GET method on this endpoint to retrieve forwarding_lan_details
+      records. Use the available filtering fields to narrow or broaden your search.
+    type: ''
+    nickname: forwarding_lan_details
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: ID of the forwarding_lan_details record
+      required: false
+      type: int
+      paramType: query
+    - name: id__in
+      description: Filter for forwarding_lan_details contains - a comma-separated
+        list of forwarding_lan_details IDs.
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: auto_whitelist
+      description: Auto whitelist status
+      required: false
+      type: boolean
+      paramType: query
+    - name: enabled
+      description: Enabled status
+      required: false
+      type: boolean
+      paramType: query
+    - name: lan
+      description: The LAN where the traffic is being forwarded
+      required: false
+      type: 'in: int out: url'
+      paramType: query
+    - name: lan__in
+      description: Filter for lan contains - a comma-separated list of lan IDs.
+      required: false
+      type: int
+      paramType: query
+    - name: network_id
+      description: Network ID
+      required: false
+      type: int
+      paramType: query
+    - name: network_id__in
+      description: Filter for network_id contains - a comma-separated list of network
+        IDs.
+      required: false
+      type: int
+      paramType: query
+    - name: overlay_network_binding
+      description: Overlay network ID
+      required: false
+      type: 'in: int out: url'
+      paramType: query
+    - name: overlay_network_binding__in
+      description: Filter for overlay_network_binding contains - a comma-separated
+        list of overlay_network_binding IDs.
+      required: false
+      type: int
+      paramType: query
+- path: "/forwarding_lan_details/{id}/"
+  operations:
+  - method: PUT
+    summary: Update a forwarding_lan_details record
+    notes: Use the PUT method on this endpoint to update a forwarding_lan_details
+      record. Include the fields/values to update in the 'Content' field as a JSON
+      object.
+    description: ''
+    group: forwarding_lan_details
+    type: ''
+    nickname: forwarding_lan_details
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: The ID of the forwarding_lan_details record to PUT
+      required: true
+      type: int
+      paramType: path
+    - name: content
+      description: JSON describing the forwarding_lan_details record field(s) to update
+      required: true
+      type: string
+      paramType: body
+- path: "/forwarding_lan_details/"
+  operations:
+  - method: POST
+    summary: Create a forwarding_lan_details record
+    notes: Use the POST method on this endpoint to create a new forwarding_lan_details
+      record. Include the fields/values to add for the record in the 'Content' field
+      as a JSON object.
+    description: ''
+    group: forwarding_lan_details
+    type: ''
+    nickname: forwarding_lan_details
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: content
+      description: JSON describing the forwarding_lan_details object to create
+      required: true
+      type: string
+      paramType: body
+- path: "/forwarding_lan_details/{id}/"
+  operations:
+  - method: DELETE
+    summary: Delete a forwarding_lan_details record
+    notes: Use the DELETE method on this endpoint to delete a forwarding_lan_details
+      record. This method requires the ID of the forwarding_lan_details record to
+      delete. Performing a DELETE action removes the record from NetCloud and can't
+      be reversed.
+    description: ''
+    group: forwarding_lan_details
+    type: ''
+    nickname: forwarding_lan_details
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: ID of the forwarding_lan_details record to delete
+      required: true
+      type: int
+      paramType: path
+- path: "/groups/"
+  operations:
+  - method: GET
+    summary: Get information about groups
+    notes: Use the GET method on this endpoint to retrieve groups records. Use the
+      available filtering fields to narrow or broaden your search.
+    description: Use the GET method on this endpoint to retrieve groups records. Use
+      the available filtering fields to narrow or broaden your search.
+    group: groups
+    type: ''
+    nickname: groups
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: account
+      description: Account that contains the groups record
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: account__in
+      description: Filter for account contains - a comma-separated list of account
+        IDs
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: id
+      description: ID of a groups record
+      required: false
+      type: int
+      paramType: query
+    - name: id__in
+      description: Filter for ID contains - a comma-separated list of groups record
+        IDs
+      required: false
+      type: int
+      paramType: query
+    - name: name
+      description: Name of the group
+      required: false
+      type: string
+      paramType: query
+    - name: name__in
+      description: Filter for names contains - a comma-separated list of group names
+      required: false
+      type: string
+      paramType: query
+    - name: expand
+      description: Specifies that the returned value for the passed in attribute be
+        expanded in the response body
+      required: false
+      type: string
+      paramType: query
+- path: "/groups/{id}/"
+  operations:
+  - method: PUT
+    summary: Update a groups record
+    notes: Use the PUT method on this endpoint to update a groups record. Include
+      the fields/values to update in the 'Content' field as a JSON object.
+    description: Use the PUT method on this endpoint to update a groups record. Include
+      the fields/values to update in the 'Content' field as a JSON object.
+    group: groups
+    type: ''
+    nickname: groups
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: The ID of the groups record to modify
+      required: true
+      type: int
+      paramType: path
+    - name: content
+      description: JSON describing the groups record field(s) to update
+      required: true
+      type: string
+      paramType: body
+- path: "/groups/"
+  operations:
+  - method: POST
+    summary: Create a groups record
+    notes: Use the POST method on this endpoint to create a new groups record. Include
+      the fields/values to add for the record in the 'Content' field as a JSON object.
+    description: Use the POST method on this endpoint to create a new groups record.
+      Include the fields/values to add for the record in the 'Content' field as a
+      JSON object.
+    group: groups
+    type: ''
+    nickname: groups
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: content
+      description: JSON describing the groups object to create
+      required: true
+      type: string
+      paramType: body
+- path: "/groups/{id}/"
+  operations:
+  - method: DELETE
+    summary: Delete a groups record
+    notes: Use the DELETE method on this endpoint to delete a groups record. This
+      method requires the ID of the groups record to delete. Performing a DELETE action
+      removes the record from NetCloud and can't be reversed.
+    description: Use the DELETE method on this endpoint to delete a groups record.
+      This method requires the ID of the groups record to delete. Performing a DELETE
+      action removes the record from NetCloud and can't be reversed.
+    group: groups
+    type: ''
+    nickname: groups
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: ID of the groups record to delete
+      required: true
+      type: int
+      paramType: path
+- path: "/historical_locations/"
+  operations:
+  - method: GET
+    summary: Get information about historical_locations
+    notes: Use the GET method on this endpoint to retrieve historical_locations records.
+      Use the available filtering fields to narrow or broaden your search.
+    description: Use the GET method on this endpoint to retrieve historical_locations
+      records. Use the available filtering fields to narrow or broaden your search
+    group: historical_locations
+    type: ''
+    nickname: historical_locations
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: router
+      description: The ID of the router that sent the location data. This parameter
+        is REQUIRED. Only one router ID may be specified per query; you can't provide
+        a list of router IDs to this endpoint.
+      required: true
+      type: int
+      paramType: query
+    - name: created_at__gt
+      description: Return only data points with created_at timestamps AFTER this datetime.
+        If no timezone is specified, UTC is assumed.
+      required: false
+      type: ISO datetime
+      paramType: query
+    - name: created_at_timeuuid__gt
+      description: Return only data points with created_at_timeuuid values AFTER this
+        UUID. Using this query parameter causes the query to skip older data points
+        which were recorded before the created_at_timeuuid field was added. A unique
+        ID associated with the created_at timestamp
+      required: false
+      type: UUID
+      paramType: query
+    - name: created_at__lte
+      description: Return only data points with created_at timestamps ON OR BEFORE
+        this. If limit is reached first then this parameter does not apply.
+      required: false
+      type: ISO datetime
+      paramType: query
+    - name: limit
+      description: Return no more than this many location data points. If created_at__lte
+        is reached first then this parameter does not apply.
+      required: false
+      type: int
+      paramType: query
+- path: "/locations/"
+  operations:
+  - method: GET
+    summary: Get information about locations
+    notes: Use the GET method on this endpoint to retrieve locations records. Use
+      the available filtering fields to narrow or broaden your search.
+    description: Use the GET method on this endpoint to retrieve locations records.
+      Use the available filtering fields to narrow or broaden your search.
+    group: locations
+    nickname: locations
+    type: ''
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: ID of a locations record
+      required: false
+      type: int
+      paramType: query
+    - name: id__in
+      description: Filter for ID contains - a comma-separated list of locations record
+        IDs
+      required: false
+      type: int
+      paramType: query
+- path: "/locations/"
+  operations:
+  - method: POST
+    summary: Create a locations record
+    notes: Use the POST method on this endpoint to create a new locations record.
+      Include the fields/values to add for the record in the 'Content' field as a
+      JSON object.
+    description: "<p>This operation creates a Location.</p>"
+    group: locations
+    type: ''
+    nickname: locations
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: content
+      description: JSON describing the locations object to create
+      required: true
+      type: string
+      paramType: body
+- path: "/locations/{id}/"
+  operations:
+  - method: PUT
+    summary: Update a locations record
+    notes: Use the PUT method on this endpoint to update an locations record. Include
+      the fields/values to update in the 'Content' field as a JSON object.
+    description: "<p>This operation updates Locations.</p>"
+    group: locations
+    type: ''
+    nickname: locations
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: ID of the locations record to update
+      required: true
+      type: int
+      paramType: path
+    - name: content
+      description: JSON describing the locations record field(s) to update
+      required: true
+      type: string
+      paramType: body
+- path: "/locations/{id}/"
+  operations:
+  - method: DELETE
+    summary: Delete a locations record
+    notes: Use the DELETE method on this endpoint to delete a locations record. This
+      method requires the ID of the locations record to delete. Performing a DELETE
+      action removes the record from NetCloud and can't be reversed.
+    description: Use the DELETE method on this endpoint to delete a locations record.
+      This method requires the ID of the locations record to delete. Performing a
+      DELETE action removes the record from NetCloud and can't be reversed.
+    group: locations
+    type: ''
+    nickname: locations
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: ID of the locations record to delete
+      required: true
+      type: int
+      paramType: path
+- path: "/net_device_health/"
+  operations:
+  - method: GET
+    summary: Get information about net_device_health
+    notes: Use the GET method on this endpoint to retrieve net_device_health records.
+      Use the available filtering fields to narrow or broaden your search.
+    description: Use the GET method on this endpoint to retrieve net_device_health
+      records. Use the available filtering fields to narrow or broaden your search.
+    group: net_device_health
+    type: ''
+    nickname: net_device_health
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: net_device
+      description: ID of a net device
+      required: false
+      type: int
+      paramType: query
+- path: "/net_device_metrics/"
+  operations:
+  - method: GET
+    summary: Get information about net_device_metrics
+    notes: Use the GET method on this endpoint to retrieve net_device_metrics records.
+      Use the available filtering fields to narrow or broaden your search.
+    nickname: net_device_metrics
+    group: net_device_metrics
+    type: ''
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: net_device
+      description: The unque URL for each net device in the system
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: net_device__in
+      description: Filter for net_device contains - a comma separated list of net
+        device IDs
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: update_ts__lt
+      description: Filter for net_device_metrics records with any fields updated before
+        this filter's value
+      required: false
+      type: timestamp
+      paramType: query
+    - name: update_ts__gt
+      description: Filter for net_device_metrics records with any fields updated after
+        this filter's value
+      required: false
+      type: timestamp
+      paramType: query
+- path: "/net_device_signal_samples/"
+  operations:
+  - method: GET
+    summary: Get information about net_device_signal_samples
+    notes: "<p>Use the GET method on this endpoint to retrieve net_device_signal_samples
+      records. Use the available filtering fields to narrow or broaden your search.</p><p><strong>Note:
+      </strong>There is a 100 device limit for API queries. If you attempt to retrieve
+      records for more than 100 devices in a single query you will receive an error
+      message. If you do not explicitly specify devices, it is assumed that you are
+      trying to pull records for all devices in your account. If you have more than
+      100 devices in your account then you may query in batches. See the example titled
+      'Net Device Usage and Signal Samples' on the Sample Code page for details on
+      querying net_device_signal_samples in batches.</p>"
+    group: net_device_signal_samples
+    type: ''
+    nickname: net_device_signal_samples
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: net_device
+      description: ID of a net device
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: net_device__in
+      description: Filter for net_device contains - a comma-separated list of net_device
+        IDs
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: created_at
+      description: Timestamp for when the net_device_signal_samples record was created
+      required: false
+      type: timestamp
+      paramType: query
+    - name: created_at__lt
+      description: Filter for created_at is less than
+      required: false
+      type: timestamp
+      paramType: query
+    - name: created_at__gt
+      description: Filter for created_at is greater than
+      required: false
+      type: timestamp
+      paramType: query
+    - name: created_at_timeuuid
+      description: A unique ID (timeuuid) associated with the created_at timestamp
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__in
+      description: Filter for created_at_timeuuid in - a comma-separated list of timeuuids
+        for net_device_signal_samples records
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__gt
+      description: Filter for created_at_timeuuid is greater than
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__gte
+      description: Filter for created_at_timeuuid is greater than or equal to
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__lt
+      description: Filter for created_at_timeuuid is less than
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__lte
+      description: Filter for created_at_timeuuid is less than or equal
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: order_by
+      description: Specifies the sort order of response data
+      required: false
+      type: string
+      paramType: query
+- path: "/net_device_usage_samples/"
+  operations:
+  - method: GET
+    summary: Get information about net_device_usage_samples
+    notes: "<p>Use the GET method on this endpoint to retrieve net_device_usage_samples
+      records. Use the available filtering fields to narrow or broaden your search.</p><p><strong>Note:
+      </strong>There is a 100 device limit for API queries. If you attempt to retrieve
+      records for more than 100 devices in a single query you will receive an error
+      message. If you do not explicitly specify devices, it is assumed that you are
+      trying to pull records for all devices in your account. If you have more than
+      100 devices in your account then you may query in batches. See the example titled
+      'Net Device Usage and Signal Samples' on the Sample Code page for details on
+      querying net_device_signal_samples in batches.</p>"
+    nickname: net_device_usage_samples
+    group: net_device_usage_samples
+    type: ''
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: net_device
+      description: ID of a net device
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: net_device__in
+      description: Filter for net_device contains - a comma-separated list of net_device
+        IDs
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: created_at
+      description: Timestamp for when the net_device_usage_samples record was created
+      required: false
+      type: timestamp
+      paramType: query
+    - name: created_at__lt
+      description: Filter for created_at is less than
+      required: false
+      type: timestamp
+      paramType: query
+    - name: created_at__gt
+      description: Filter for created_at is greater than
+      required: false
+      type: timestamp
+      paramType: query
+    - name: created_at_timeuuid
+      description: A unique ID (timeuuid) associated with the created_at timestamp
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__in
+      description: Filter for created_at_timeuuid in - a comma-separated list of timeuuids
+        for net_device_usage_samples records
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__gt
+      description: Filter for created_at_timeuuid is greater than
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__gte
+      description: Filter for created_at_timeuuid is greater than or equal to
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__lt
+      description: Filter for created_at_timeuuid is less than
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__lte
+      description: Filter for created_at_timeuuid is less than or equal
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: order_by
+      description: Specifies the sort order for response data
+      required: false
+      type: string
+      paramType: query
+- path: "/net_devices/"
+  operations:
+  - method: GET
+    summary: Get information about net_devices
+    notes: Use the GET method on this endpoint to retrieve net_devices records. Use
+      the available filtering fields to narrow or broaden your search.
+    description: Use the GET method on this endpoint to retrieve net_devices records.
+      Use the available filtering fields to narrow or broaden your search.
+    group: net_devices
+    type: ''
+    nickname: net_devices
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: account
+      description: Account that owns the net_devices record
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: account__in
+      description: Filter for account contains - a comma-separated list of account
+        IDs
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: connection_state
+      description: Connection state of a net device
+      required: false
+      type: string
+      enum:
+      - Connected
+      - Connecting
+      - Disconnecting
+      - Disconnected
+      - Error
+      - Ready
+      - Configuring
+      paramType: query
+    - name: connection_state__in
+      description: Filter for connection_state contains - a comma-separated list of
+        connection states
+      required: false
+      type: string
+      paramType: query
+    - name: id
+      description: ID of the net_devices record
+      required: false
+      type: int
+      paramType: query
+    - name: id__in
+      description: Filter for ID contains - a comma-separated list of net_devices
+        IDs.
+      required: false
+      type: int
+      paramType: query
+    - name: is_asset
+      description: True for modem network devices
+      required: false
+      type: boolean
+      paramType: query
+    - name: ipv4_address
+      description: Device's IPv4 address
+      required: false
+      type: string
+      paramType: query
+    - name: ipv4_address__in
+      description: Filter for ipv4_address contains - a comma-separated list of ipv4
+        addresses
+      required: false
+      type: string
+      paramType: query
+    - name: mode
+      description: Network device's mode, either WAN or LAN
+      required: false
+      type: string
+      enum:
+      - WAN
+      - LAN
+      paramType: query
+    - name: mode__in
+      description: Filter for mode contains - a comma-separated list of modes
+      required: false
+      type: string
+      paramType: query
+    - name: router
+      description: Cradlepoint device the network device is currently connected
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: router__in
+      description: Filter for router contains - a comma-separated list of router IDs
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: expand
+      description: Specifies that the returned value for the passed in attribute be
+        expanded in the response body
+      required: false
+      type: string
+      enum:
+      - account
+      - router
+      paramType: query
+- path: "/overlay_network_bindings/"
+  operations:
+  - method: GET
+    summary: Get information about overlay_network_bindings
+    notes: Use the GET method on this endpoint to retrieve overlay_network_bindings
+      records. Use the available filtering fields to narrow or broaden your search.
+    type: ''
+    nickname: overlay_network_bindings
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: ID of the overlay_network_bindings record
+      required: false
+      type: int
+      paramType: query
+    - name: id__in
+      description: Filter for overlay_network_bindings contains - a comma-separated
+        list of overlay_network_bindings IDs.
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: account
+      description: Account that owns the overlay_network_bindings record
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: account__in
+      description: Filter for account contains - a comma-separated list of account
+        IDs.
+      required: false
+      type: int
+      paramType: query
+    - name: forwarding_lan_details
+      description: Forwarding LAN details (enabled, auto-whitelist, lan)
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: forwarding_lan_details__in
+      description: Filter for forwarding_lan_details contains - a comma-separated
+        list of forwarding_lan_details IDs.
+      required: false
+      type: int
+      paramType: query
+    - name: network_id
+      description: Associated network ID
+      required: false
+      type: int
+      paramType: query
+    - name: network_id__in
+      description: Filter for network id contains - a comma-separated list of network
+        IDs.
+      required: false
+      type: int
+      paramType: query
+    - name: gateway_id
+      description: Associated gateway ID
+      required: false
+      type: int
+      paramType: query
+    - name: gateway_id__in
+      description: Filter for gateway id contains - a comma-separated list of gateway
+        IDs.
+      required: false
+      type: int
+      paramType: query
+    - name: group
+      description: Associated group ID
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: group__in
+      description: Filter for group contains - a comma-separated list of group IDs.
+      required: false
+      type: int
+      paramType: query
+    - name: router
+      description: Associated router ID
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: router__in
+      description: Filter for router contains - a comma-separated list of router IDs.
+      required: false
+      type: int
+      paramType: query
+- path: "/overlay_network_bindings/{id}/"
+  operations:
+  - method: PUT
+    summary: Update an overlay_network_bindings record
+    notes: Use the PUT method on this endpoint to update an overlay_network_bindings
+      record. Include the fields/values to update in the 'Content' field as a JSON
+      object.
+    description: ''
+    group: overlay_network_bindings
+    type: ''
+    nickname: overlay_network_bindings
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: The ID of the overlay_network_bindings to PUT
+      required: true
+      type: int
+      paramType: path
+    - name: content
+      description: JSON describing the overlay_network_bindings record field(s) to
+        update
+      required: true
+      type: string
+      paramType: body
+- path: "/overlay_network_bindings/"
+  operations:
+  - method: POST
+    summary: Create an overlay_network_bindings record
+    notes: Use the POST method on this endpoint to create a new overlay_network_bindings
+      record. Include the fields/values to add for the record in the 'Content' field
+      as a JSON object.
+    description: ''
+    group: overlay_network_bindings
+    type: ''
+    nickname: overlay_network_bindings
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: content
+      description: JSON describing the overlay_network_bindings object to create
+      required: true
+      type: string
+      paramType: body
+- path: "/overlay_network_bindings/{id}/"
+  operations:
+  - method: DELETE
+    summary: Delete an overlay_network_bindings record
+    notes: Use the DELETE method on this endpoint to delete an overlay_network_bindings
+      record. This method requires the ID of the overlay_network_bindings record to
+      delete. Performing a DELETE action removes the record from NetCloud and can't
+      be reversed.
+    description: ''
+    group: overlay_network_bindings
+    type: ''
+    nickname: overlay_network_bindings
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: ID of the overlay_network_bindings record to delete
+      required: true
+      type: int
+      paramType: path
+- path: "/products/"
+  operations:
+  - method: GET
+    summary: List
+    notes: "<p>This method returns a list of Cradlepoint products and information
+      about them.</p><p>This endpoint can be called without parameters to retrieve
+      all products, or filtered by a specific product id or range of IDs (__in). When
+      using the __in filter, supply a list of IDs, e.g. '21,22,23', to return only
+      the products matching those IDs.</p>"
+    description: "<p>This operation returns Cradlepoint products and information about
+      them.</p>"
+    group: products
+    nickname: products
+    type: ''
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: Object ID of a products record
+      required: false
+      type: int
+      paramType: query
+    - name: id__in
+      description: Comma-separated list of int IDs
+      required: false
+      type: int
+      paramType: query
+- path: "/reboot_activity/"
+  operations:
+  - method: POST
+    summary: Create a reboot_activity record
+    notes: "<p>This operation reboots a router or a group. Add a JSON object to the
+      'Content' field containing a router field or group field to specify the reboot
+      action applies to a specific router or to a group of routers. For example:</p><pre>{&#34;router&#34;:&#34;/api/v2/routers/&lt;router
+      ID&gt;/&#34;} or {&#34;group&#34;:&#34;/api/v2/groups/&lt;group ID&gt;/&#34;}</pre>"
+    description: "<p>This operation reboots a device or a group of devices.</p>"
+    group: reboot_activity
+    type: ''
+    nickname: reboot_activity
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: content
+      description: JSON object representing either the router or group to reboot
+      required: true
+      type: string
+      paramType: body
+- path: "/router_alerts/"
+  operations:
+  - method: GET
+    summary: Get information about router_alerts
+    notes: "<p>Use the GET method on this endpoint to retrieve router_alerts records.
+      Use the available filtering fields to narrow or broaden your search.</p><p><strong>Note:
+      </strong>There is a 100 device limit for API queries. If you attempt to retrieve
+      records for more than 100 devices in a single query you will receive an error
+      message. If you do not explicitly specify devices, it is assumed that you are
+      trying to pull records for all devices in your account. If you have more than
+      100 devices in your account then you may query in batches. See the example titled
+      'Net Device Usage and Signal Samples' on the Sample Code page for details on
+      querying in batches.</p>"
+    group: router_alerts
+    type: ''
+    nickname: router_alerts
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: router
+      description: Router ID
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: router__in
+      description: Filter for router ID contains - a comma-separated list of router-record
+        IDs
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: created_at
+      description: Timestamp for when the router_alerts record was created
+      required: false
+      type: timestamp
+      paramType: query
+    - name: created_at__lt
+      description: Less than filtering operator for created_at
+      required: false
+      type: timestamp
+      paramType: query
+    - name: created_at__gt
+      description: Filter for created_at is greater than
+      required: false
+      type: timestamp
+      paramType: query
+    - name: created_at_timeuuid
+      description: A unique ID (timeuuid) associated with the created_at timestamp
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__in
+      description: Filter for created_at_timeuuid in - a comma-separated list of timeuuids
+        for router_alerts records
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__gt
+      description: Filter for created_at_timeuuid is greater than
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__gte
+      description: Filter for created_at_timeuuid is greater than or equal to
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__lt
+      description: Filter for created_at_timeuuid is less than
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__lte
+      description: Filter for created_at_timeuuid is less than or equal
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: order_by
+      description: Specifies the sort order for response data
+      required: false
+      type: string
+      paramType: query
+- path: "/router_lans/"
+  operations:
+  - method: GET
+    summary: Get information about router_lans
+    notes: Use the GET method on this endpoint to retrieve router_lans records. Use
+      the available filtering fields to narrow or broaden your search.
+    description: ''
+    group: router_lans
+    nickname: router_lans
+    type: ''
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: ID of the router_lans record
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: account
+      description: Account that owns the router_lans record
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: router
+      description: Router ID
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: name
+      description: Name of the router_lans record
+      required: false
+      type: string
+      paramType: query
+    - name: ip_address
+      description: IP address associated with the router_lans record
+      required: false
+      type: string
+      paramType: query
+    - name: enabled
+      description: Enabled/disabled state of a router_lans record
+      required: false
+      type: boolean
+      paramType: query
+    - name: expand
+      description: Specifies that the returned value for the passed in attribute be
+        expanded in the response body.
+      required: false
+      type: int
+      enum:
+      - router
+      paramType: query
+- path: "/router_logs/"
+  operations:
+  - method: GET
+    summary: Get information about router_logs
+    notes: "<p>Use the GET method on this endpoint to retrieve router_logs records.
+      Use the available filtering fields to narrow or broaden your search.</p> <p><strong>Note:</strong>
+      To receive router logs, you must enable them on the <strong>Groups</strong>
+      page in NCM using the <strong>Settings</strong> dialog and selecting the <strong>Enable
+      Log Reporting</strong> option. Enabling device logs can significantly increase
+      the NCM network traffic from the device to the server depending on how quickly
+      the device is generating log events.</p>"
+    group: router_logs
+    type: ''
+    nickname: router_logs
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: router
+      description: ID of the Router to retrieve logs from
+      required: true
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: created_at
+      description: Timestamp for when the router_logs record was created
+      required: false
+      type: timestamp
+      paramType: query
+    - name: created_at__lt
+      description: Filter for created_at is less than
+      required: false
+      type: timestamp
+      paramType: query
+    - name: created_at__gt
+      description: Filter for created_at is greater than
+      required: false
+      type: timestamp
+      paramType: query
+    - name: created_at_timeuuid
+      description: A unique ID (timeuuid) associated with the created_at timestamp
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__in
+      description: Filter for created_at_timeuuid in - a comma-separated list of timeuuids
+        for router_logs records
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__gt
+      description: Filter for created_at_timeuuid is greater than
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__gte
+      description: Filter for created_at_timeuuid is greater than or equal to
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__lt
+      description: Filter for created_at_timeuuid is less than
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__lte
+      description: Filter for created_at_timeuuid is less than or equal
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: order_by
+      description: Specifies the sort order for response data
+      required: false
+      type: string
+      paramType: query
+- path: "/router_state_samples/"
+  operations:
+  - method: GET
+    summary: Get information about router_state_samples
+    notes: "<p>Use the GET method on this endpoint to retrieve router_state_samples
+      records. Use the available filtering fields to narrow or broaden your search.
+      This endpoint provides information about the connection state of a device with
+      NetCloud servers.</p><p><strong>Note:</strong> There is a 100 device limit for
+      API queries. If you attempt to retrieve records for more than 100 devices in
+      a single query you will receive an error message. If you do not explicitly specify
+      devices, it is assumed that you are trying to pull records for all devices in
+      your account. If you have more than 100 devices in your account then you may
+      query in batches. See the example titled 'Net Device Usage and Signal Samples'
+      on the Sample Code page for details on querying net_device_signal_samples in
+      batches.</p>"
+    group: router_state_samples
+    type: ''
+    nickname: router_state_samples
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: router
+      description: Router ID
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: router__in
+      description: Filter for router ID contains - a comma-separated list of router-record
+        IDs
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: created_at
+      description: Timestamp for when the router_state_samples record was created
+      required: false
+      type: timestamp
+      paramType: query
+    - name: created_at__lt
+      description: Less than filtering operator for created_at
+      required: false
+      type: timestamp
+      paramType: query
+    - name: created_at__gt
+      description: Filter for created_at is greater than
+      required: false
+      type: timestamp
+      paramType: query
+    - name: created_at_timeuuid
+      description: A unique ID (timeuuid) associated with the created_at timestamp
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__in
+      description: Filter for created_at_timeuuid in - a comma-separated list of timeuuids
+        for router_state_samples records
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__gt
+      description: Filter for created_at_timeuuid is greater than
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__gte
+      description: Filter for created_at_timeuuid is greater than or equal to
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__lt
+      description: Filter for created_at_timeuuid is less than
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__lte
+      description: Filter for created_at_timeuuid is less than or equal
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: order_by
+      description: Specifies the sort order for response data
+      required: false
+      type: string
+      paramType: query
+- path: "/router_stream_usage_samples/"
+  operations:
+  - method: GET
+    summary: Get information about router_stream_usage_samples
+    notes: "<p>Use the GET method on this endpoint to retrieve router_stream_usage_samples
+      records. Use the available filtering fields to narrow or broaden your search.</p><p><strong>Note:
+      </strong>There is a 100 device limit for API queries. If you attempt to retrieve
+      records for more than 100 devices in a single query you will receive an error
+      message. If you do not explicitly specify devices, it is assumed that you are
+      trying to pull records for all devices in your account. If you have more than
+      100 devices in your account then you may query in batches. See the example titled
+      'Net Device Usage and Signal Samples' on the Sample Code page for details on
+      querying in batches.</p>"
+    group: router_stream_usage_samples
+    type: ''
+    nickname: router_stream_usage_samples
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: router
+      description: Router ID
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: router__in
+      description: Filter for router ID contains - a comma-separated list of router-record
+        IDs
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: created_at
+      description: Timestamp for when the router_stream_usage_samples record was created
+      required: false
+      type: timestamp
+      paramType: query
+    - name: created_at__lt
+      description: Less than filtering operator for created_at
+      required: false
+      type: timestamp
+      paramType: query
+    - name: created_at__gt
+      description: Filter for created_at is greater than
+      required: false
+      type: timestamp
+      paramType: query
+    - name: created_at_timeuuid
+      description: A unique ID (timeuuid) associated with the created_at timestamp
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__in
+      description: Filter for created_at_timeuuid in - a comma-separated list of timeuuids
+        for router_stream_usage_samples records
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__gt
+      description: Filter for created_at_timeuuid is greater than
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__gte
+      description: Filter for created_at_timeuuid is greater than or equal to
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__lt
+      description: Filter for created_at_timeuuid is less than
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: created_at_timeuuid__lte
+      description: Filter for created_at_timeuuid is less than or equal
+      required: false
+      type: timeuuid
+      paramType: query
+    - name: order_by
+      description: Specifies the sort order for response data
+      required: false
+      type: string
+      paramType: query
+- path: "/routers/"
+  operations:
+  - method: GET
+    summary: Get information about routers
+    notes: Use the GET method on this endpoint to retrieve routers records. Use the
+      available filtering fields to narrow or broaden your search.
+    description: "<p>This method gives device information with associated id.</p>"
+    group: routers
+    type: ''
+    nickname: routers
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: account
+      description: Account that owns the routers record object
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: account__in
+      description: Filter for account contains - a comma-separated list of account
+        IDs
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: group
+      description: Optional group this device belongs to
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: group__in
+      description: Filter for group contains - a comma-separated list of group IDs
+      required: false
+      type: 'in: int<br />out: url'
+      paramType: query
+    - name: id
+      description: Routers record object ID
+      required: false
+      type: int
+      paramType: query
+    - name: id__in
+      description: Filter for ID contains - a comma-separated list of IDs
+      required: false
+      type: int
+      paramType: query
+    - name: ipv4_address
+      description: Device's IPv4 address
+      required: false
+      type: string
+      paramType: query
+    - name: ipv4_address__in
+      description: Filter for IPV4 address contains - a comma-separated list of IP
+        addresses
+      required: false
+      type: string
+      paramType: query
+    - name: mac
+      description: Device's MAC address
+      required: false
+      type: string
+      paramType: query
+    - name: mac__in
+      description: Filter for MAC address contains - a comma-separated list of MAC
+        addresses
+      required: false
+      type: string
+      paramType: query
+    - name: name
+      description: Device's name (synched with device)
+      required: false
+      type: string
+      paramType: query
+    - name: name__in
+      description: Filter for device name contains - a comma-separated list of device
+        names
+      required: false
+      type: string
+      paramType: query
+    - name: state
+      description: 'Device''s state: initialized, online or offline'
+      required: false
+      type: string
+      paramType: query
+    - name: state__in
+      description: Filter for state contains - a comma-separated list of states
+      required: false
+      type: string
+      paramType: query
+    - name: state_updated_at__lt
+      description: Filter for state_updated_at is less than
+      required: false
+      type: timestamp
+      paramType: query
+    - name: state_updated_at__gt
+      description: Filter for state_updated_at is greater than
+      required: false
+      type: timestamp
+      paramType: query
+    - name: updated_at__lt
+      description: Filter for updated_at is less than
+      required: false
+      type: timestamp
+      paramType: query
+    - name: updated_at__gt
+      description: Filter for updated_at is greater than
+      required: false
+      type: timestamp
+      paramType: query
+    - name: expand
+      description: Specifies that the returned value for the passed in attribute be
+        expanded in the response body.
+      required: false
+      type: string
+      enum:
+      - account
+      - group
+      - last_known_location
+      paramType: query
+- path: "/routers/{id}/"
+  operations:
+  - method: PUT
+    summary: Update an routers record
+    notes: Use the PUT method on this endpoint to update an routers record. Include
+      the fields/values to update in the 'Content' field as a JSON object.
+    description: Use the PUT method on this endpoint to update an routers record.
+      Include the fields/values to update in the 'Content' field as a JSON object.
+    nickname: routers
+    group: routers
+    type: ''
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: ID of router to update
+      required: true
+      type: int
+      paramType: path
+    - name: content
+      description: JSON describing the routers record field(s) to update
+      required: true
+      type: string
+      paramType: body
+- path: "/routers/{id}/"
+  operations:
+  - method: DELETE
+    summary: Delete a routers record
+    notes: Use the DELETE method on this endpoint to delete a routers record. This
+      method requires the ID of the routers record to delete. Performing a DELETE
+      action removes the record from NetCloud and can't be reversed.
+    description: "<p>This method deletes device information with associated id</p>"
+    nickname: routers
+    group: routers
+    type: ''
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: ID of router record to delete
+      required: true
+      type: int
+      paramType: path
+- path: "/speed_test/{id}/"
+  operations:
+  - method: GET
+    summary: Get speed tests information
+    notes: "<p>Gets the results of a speed test job. The results are updated with
+      the latest known state of the speed tests. </p><p>Example URL</p><pre> https://www.cradlepointecm.com/api/v2/speed_test/{id}/</pre>"
+    type: ''
+    nickname: speed_test
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: ID of the speed test
+      required: true
+      type: int
+      paramType: path
+- path: "/speed_test/"
+  operations:
+  - method: POST
+    summary: Creates a new speed test job
+    notes: Creates a speed test job that queues/runs speed tests for a given list
+      of network devices.
+    description: "<p>Used to create and queue a speed test job. Once started the speed
+      test job will queue as many individual speed tests as the system allows. When
+      a speed test finishes more speed tests are started. This repeats until all the
+      speed tests have completed.</p>"
+    group: speed_test
+    type: ''
+    nickname: speed_test
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: content
+      description: Add  the JSON that defines the speed test
+      required: true
+      type: string
+      paramType: body
+- path: "/speed_test/{id}/"
+  operations:
+  - method: DELETE
+    summary: Deletes a speed test job.
+    notes: Deletes a speed test job. Deleting a job aborts it, but any test already
+      started on a router will finish.<p><b>Note:</b> The 'Try it out' button is removed
+      for this example since the delete process is not reversible. Once a delete occurs
+      the data is gone forever.</p>
+    description: "<p>Deletes a speed test job.</p>"
+    group: speed_test
+    type: ''
+    nickname: speed_test
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: 'id '
+      description: ID of the speed test
+      required: true
+      type: int
+      paramType: path
+- path: "/test_alert_push_destinations/"
+  operations:
+  - method: POST
+    summary: Create a new Test Alert Push Destination
+    notes: This operation creates new Test Alert Push Destination
+    description: "<p>This operation creates a new Test Alert Push Destination.</p>"
+    group: test_alert_push_destination
+    type: ''
+    nickname: test_alert_push_destinations
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: content
+      description: Json object
+      required: true
+      type: string
+      paramType: body
+- path: "/users/"
+  operations:
+  - method: GET
+    summary: Get information about users
+    notes: Use the GET method on this endpoint to retrieve users records. Use the
+      available filtering fields to narrow or broaden your search.
+    description: Use the GET method on this endpoint to retrieve users records. Use
+      the available filtering fields to narrow or broaden your search.
+    group: users
+    nickname: users
+    type: ''
+    parameters:
+    - name: X-ECM-API-ID
+      description: "<strong>ECM API app Id</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-ECM-API-KEY
+      description: "<strong>ECM API app key</strong>"
+      type: string
+      paramType: header
+      required: true
+    - name: X-CP-API-ID
+      description: "<strong>Cradlepoint API app Id</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_ids
+      required: true
+    - name: X-CP-API-KEY
+      description: "<strong>Cradlepoint API access key</strong>"
+      type: string
+      paramType: header
+      threescale_name: app_keys
+      required: true
+    - name: id
+      description: User ID
+      required: false
+      type: int
+      paramType: query
+    - name: username
+      description: Username of a user
+      required: false
+      type: string
+      paramType: query
+    - name: email
+      description: A user's email address
+      required: false
+      type: string
+      paramType: query
